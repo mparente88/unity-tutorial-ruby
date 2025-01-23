@@ -446,6 +446,7 @@
 "Assets/Scripts/DamageZone.cs"
 "Assets/Scripts/HealthCollectible.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/UIHandler.cs"
 "Assets/UnityTechnologies/Final/Scripts/Final/DamageZone.cs"
 "Assets/UnityTechnologies/Final/Scripts/Final/Enemy.cs"
 "Assets/UnityTechnologies/Final/Scripts/Final/HealthCollectible.cs"

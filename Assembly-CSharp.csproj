@@ -71,12 +71,14 @@
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/NonPlayerCharacter.cs" />
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/DamageZone.cs" />
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/Projectile.cs" />
+    <Compile Include="Assets/Scripts/UIHandler.cs" />
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/UIHandler.cs" />
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/Enemy.cs" />
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/HealthCollectible.cs" />
     <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/RubyController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/GameUI.uxml" />
     <None Include="Assets/UnityTechnologies/Final/UI/Ruby/DialogWindow.uxml" />
     <None Include="Assets/UnityTechnologies/Final/UI/SugarLand/MainUI.uxml" />
     <None Include="Assets/UnityTechnologies/Final/UI/Ruby/MainUI.uxml" />
