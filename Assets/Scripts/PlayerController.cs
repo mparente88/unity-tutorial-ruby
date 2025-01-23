@@ -7,10 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
     {
         // Variables related to player character movement
+        public int health { get { return currentHealth; }}
         public InputAction MoveAction;
         Rigidbody2D rigidbody2d;
         public int maxHealth = 5;
-        int currentHealth = 1;
+        int currentHealth;
         Vector2 move;
         public float speed = 3.0f;
 
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
             {
                 MoveAction.Enable();
                 rigidbody2d = GetComponent<Rigidbody2D>();
-                // currentHealth = maxHealth;
+                currentHealth = maxHealth;
             }
         
         // Update is called once per frame
