@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     float timer;
     int direction = 1;
     Animator animator;
+    bool broken = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +25,11 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if(!broken)
+        { 
+            return;
+        }
+
         timer -= Time.deltaTime;
         if (timer <0)
             {
@@ -66,5 +72,11 @@ public class EnemyController : MonoBehaviour
             {
                 player.ChangeHealth(-1);
             }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2d.simulated = false;
     }
 }
