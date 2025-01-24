@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         Animator animator;
         Vector2 moveDirection = new Vector2(1,0);
         public GameObject projectilePrefab;
-
+        public InputAction talkAction;
 
         // Start is called before the first frame update
         void Start()
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
                 rigidbody2d = GetComponent<Rigidbody2D>();
                 currentHealth = maxHealth;
                 animator = GetComponent<Animator>();
+                talkAction.Enable();
             }
         
         // Update is called once per frame
@@ -56,9 +57,14 @@ public class PlayerController : MonoBehaviour
                     }
                 }
 
-                if(Input.GetKeyDown(KeyCode.C))
+                if (Input.GetKeyDown(KeyCode.C))
                     {
                         Launch();
+                    }
+
+                if (Input.GetKeyDown(KeyCode.X))
+                    {
+                        FindFriend();
                     }
             }
 
@@ -91,5 +97,15 @@ public class PlayerController : MonoBehaviour
             Projectile projectile = projectileObject.GetComponent<Projectile>();
             projectile.Launch(moveDirection, 300);
             animator.SetTrigger("Launch");
+        }
+
+        void FindFriend()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f,  moveDirection, 1.5f, LayerMask.GetMask("NPC"));
+
+            if (hit.collider != null)
+            {
+                Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
+            }
         }
     }

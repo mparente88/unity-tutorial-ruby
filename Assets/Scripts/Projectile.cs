@@ -38,6 +38,9 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.magnitude > 100.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
