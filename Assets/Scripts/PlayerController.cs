@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
         public float timeInvincible = 2.0f;
         bool isInvincible;
         float damageCooldown;
+        Animator animator;
+        Vector2 moveDirection = new Vector2(1,0);
 
 
         // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
                 MoveAction.Enable();
                 rigidbody2d = GetComponent<Rigidbody2D>();
                 currentHealth = maxHealth;
+                animator = GetComponent<Animator>();
             }
         
         // Update is called once per frame
@@ -32,6 +35,17 @@ public class PlayerController : MonoBehaviour
             {
                 move = MoveAction.ReadValue<Vector2>();
                 // Debug.Log(move);
+
+                if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y,0.0f))
+                    {
+                        moveDirection.Set(move.x, move.y);
+                        moveDirection.Normalize();
+                    }
+
+                animator.SetFloat("Look X", moveDirection.x);
+                animator.SetFloat("Look Y", moveDirection.y);
+                animator.SetFloat("Speed", move.magnitude);
+
                 if (isInvincible)
                 {
                     damageCooldown -= Time.deltaTime;
@@ -60,7 +74,8 @@ public class PlayerController : MonoBehaviour
                     isInvincible = true;
                     damageCooldown = timeInvincible;
                 }
+                animator.SetTrigger("Hit");
                 currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-                Debug.Log(currentHealth + "/" + maxHealth);
+                UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
             }
     }

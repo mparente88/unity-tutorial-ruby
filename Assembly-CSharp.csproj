@@ -68,14 +68,9 @@
     <Compile Include="Assets/Scripts/HealthCollectible.cs" />
     <Compile Include="Assets/Scripts/DamageZone.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/NonPlayerCharacter.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/DamageZone.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/Projectile.cs" />
     <Compile Include="Assets/Scripts/UIHandler.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/UIHandler.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/Enemy.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/HealthCollectible.cs" />
-    <Compile Include="Assets/UnityTechnologies/Final/Scripts/Final/RubyController.cs" />
+    <Compile Include="Assets/Scripts/EnemyController.cs" />
+    <Compile Include="Assets/Scripts/Projectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/GameUI.uxml" />
